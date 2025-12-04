@@ -159,7 +159,8 @@ The forecast task is extremely challenging because, only 4 months of training da
 
 *Strong non-linearity + abrupt demand drift*
 
-➡ Random Forest shows the best generalization for long-term forecasting in this dataset.
+
+-> Random Forest shows the best generalization for long-term forecasting in this dataset.
 
 ### Summary
 
