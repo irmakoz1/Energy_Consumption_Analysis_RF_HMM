@@ -6,8 +6,6 @@ This repository implements a fully modular machine-learning pipeline for forecas
 
 - Hidden Markov Model (HMM)–augmented models
 
-- Deep learning (LSTM sequence model)
-
 - Feature importance and hidden-state analysis
 
 - Forecasting for 1-step and long-term horizons (up to 2 months)
@@ -56,7 +54,7 @@ Most analysis focuses on WBE (electricity) from Dataset A due to its strong conn
 
 The data exhibits seasonal patterns (daily and weekly cycles), strong temperature- and solar-driven fluctuations, significant noise and non-linearity, a pronounced drift near the end (Christmas → New Year), which complicates forecasting.
 
-**Correlations** 
+**Correlations**
 
 <img width="773" height="541" alt="image" src="https://github.com/user-attachments/assets/c2191e62-3415-4d2c-8499-736459154ecb" />
 
@@ -110,20 +108,19 @@ The repository includes a clean, modularized pipeline:
 
 src/
 
- ├── models/            # HMM, LSTM, XGBoost, RF, LR, Augmented models
- 
+ ├── models/            # HMM, XGBoost, RF, LR, Augmented models
+
  ├── utils/             # Preprocessing, forecasting, evaluation
- 
+
  ├── plots/             # Visualization utilities
- 
+
  └── main notebook     # Analysis pipeline
- 
+
 
 
 | Category           | Models                                      |
 | ------------------ | ------------------------------------------- |
 | **Baseline**       | Linear Regression, Random Forest, XGBoost   |
-| **Sequence Model** | LSTM with sliding window (seq_len)          |
 | **HMM Models**     | HMM only, HMM + AR, HMM + RF, HMM + XGBoost |
 | **Hybrid**         | HMM features integrated with ML models      |
 
@@ -151,7 +148,6 @@ Short-Term (1-Step Ahead)
 
 - HMM-augmented models help smooth sequence transitions however, does not perform better than baseline models.
 
-- LSTM performs solidly but constrained by limited training time range
 
 Long-Term (Up to 2 Months Ahead)
 
@@ -164,6 +160,6 @@ The forecast task is extremely challenging because, only 4 months of training da
 
 ### Summary
 
-This project demonstrates a complete end-to-end ML forecasting pipeline, modularized models allowing easy experimentation, hidden-state discovery of building operating modes, comparison of classical ML, HMM, and deep learning models and the practical challenges of long-term time series forecasting with limited data. Despite the difficulty of predicting beyond the training horizon, the approach provides valuable insights in some trends and patterns.
+This project demonstrates a complete end-to-end ML forecasting pipeline, modularized models allowing easy experimentation, hidden-state discovery of building operating modes, comparison of classical ML and HMM and the practical challenges of long-term time series forecasting with limited data. Despite the difficulty of predicting beyond the training horizon, the approach provides valuable insights in some trends and patterns.
 
 Hot water (WBHW) and overall electricity increase in winter months due to heating load and there are seasonal and periodic behavior related to weekend/weekdays, day/night and is holiday or not but dataset is too short to reliably estimate these trends. We identified that solar radiation, temperature, night/day time and weekend/week day has influence on building energy consumption levels.​
