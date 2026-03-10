@@ -1,5 +1,4 @@
-# HVAC Energy Forecasting — Modular ML Pipeline with HMM + LSTM
-
+# HVAC Energy Forecasting — Modular ML Pipeline with HMM 
 This repository implements a fully modular machine-learning pipeline for forecasting building energy consumption using multiple models, including:
 
 - Baseline models (Linear Regression, Random Forest, XGBoost)
